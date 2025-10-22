@@ -11,11 +11,6 @@ const validateContact = [
     .isLength({ min: 2, max: 100 })
     .withMessage('Nome deve ter entre 2 e 100 caracteres'),
   
-  body('phone')
-    .trim()
-    .matches(/^\(\d{2}\)\s\d{4,5}-\d{4}$/)
-    .withMessage('Formato de telefone inválido. Use: (11) 99999-9999'),
-  
   body('email')
     .trim()
     .isEmail()
@@ -26,15 +21,6 @@ const validateContact = [
 // POST /api/contacts - Criar novo contato
 router.post('/', validateContact, async (req, res) => {
   try {
-    // Verificar erros de validação
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        success: false,
-        message: 'Dados inválidos',
-        errors: errors.array()
-      });
-    }
 
     const { name, phone, email } = req.body;
     // Verificar se já existe um contato com este email

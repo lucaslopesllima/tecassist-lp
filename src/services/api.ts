@@ -1,9 +1,5 @@
 // Configurações da API
-const API_BASE_URL = import.meta.env.VITE_API_URL || (
-  import.meta.env.MODE === 'production' 
-    ? 'https://techassist-landing-api.vercel.app/api' 
-    : '/api'
-);
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // Interface para dados do contato
 export interface ContactData {

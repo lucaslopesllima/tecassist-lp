@@ -1,4 +1,116 @@
-# Welcome to your Lovable project
+# TechAssist Landing Page
+
+Landing page moderna e responsiva para a TechAssist, com sistema completo de formulário de contato integrado ao MongoDB.
+
+## 🚀 Funcionalidades
+
+- ✅ Landing page responsiva com React + TypeScript
+- ✅ Design moderno com Tailwind CSS e Shadcn/UI
+- ✅ Formulário de contato funcional
+- ✅ Backend Node.js + Express + MongoDB
+- ✅ Validação completa de dados
+- ✅ Sistema de leads com status
+- ✅ Tema claro/escuro
+- ✅ Animações suaves
+
+## 🛠️ Tecnologias
+
+### Frontend
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Shadcn/UI
+- React Router
+- React Hook Form
+
+### Backend  
+- Node.js + Express
+- MongoDB com Mongoose
+- Validação com express-validator
+- CORS e Helmet para segurança
+
+## 📋 Pré-requisitos
+
+- Node.js 18+
+- MongoDB (local ou Atlas)
+- npm ou yarn
+
+## 🚀 Instalação e Execução
+
+### Opção 1: Script Automático (Windows)
+```bash
+# Execute o arquivo start-dev.bat
+start-dev.bat
+```
+
+### Opção 2: Manual
+
+1. **Instale as dependências:**
+```bash
+# Frontend
+npm install
+
+# Backend
+cd server
+npm install
+cd ..
+```
+
+2. **Configure o MongoDB:**
+```bash
+# Para MongoDB local (certifique-se de que está rodando)
+mongod --dbpath "C:\data\db"
+
+# Ou use MongoDB Atlas e configure a string de conexão
+```
+
+3. **Configure as variáveis de ambiente:**
+```bash
+# .env (raiz do projeto)
+VITE_API_URL=http://localhost:3001/api
+
+# server/.env
+MONGODB_URI=mongodb://localhost:27017/techassist
+PORT=3001
+FRONTEND_URL=http://localhost:5173
+```
+
+4. **Inicie os serviços:**
+```bash
+# Opção A: Ambos simultaneamente
+npm run dev:full
+
+# Opção B: Separadamente
+npm run server    # Terminal 1 - Backend
+npm run dev       # Terminal 2 - Frontend
+```
+
+## 📡 Endpoints da API
+
+- `POST /api/contacts` - Criar contato
+- `GET /api/contacts` - Listar contatos
+- `GET /api/contacts/:id` - Buscar contato
+- `PUT /api/contacts/:id/status` - Atualizar status
+- `GET /api/health` - Health check
+
+## 📊 Estrutura do Banco
+
+```javascript
+// Coleção: contacts
+{
+  name: String,        // Nome completo
+  phone: String,       // (11) 99999-9999
+  email: String,       // Email único
+  status: String,      // novo|contatado|proposta_enviada|fechado
+  createdAt: Date      // Data de criação
+}
+```
+
+## 🎯 URLs da Aplicação
+
+- **Frontend**: http://localhost:5173
+- **Backend**: http://localhost:3001
+- **Health Check**: http://localhost:3001/api/health
 
 ## Project info
 
